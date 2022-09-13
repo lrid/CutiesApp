@@ -1,10 +1,12 @@
 import React from "react";
-import {View, Text, StyleSheet} from 'react-native'
+import {View, StyleSheet} from 'react-native'
+import Pics from "../components/pics";
+import deerpic from './deer-pic.jpeg'
 
 export default function Deer () {
     return (
         <View style={styles.container}>
-            <Pics animal="Deer" />
+            <Pics animal="Deer" image={deerpic}/>
         </View>
     )
 }

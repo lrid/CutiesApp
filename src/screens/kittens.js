@@ -1,10 +1,12 @@
 import React from "react";
 import {View, Text, StyleSheet} from 'react-native'
+import Pics from "../components/pics";
+import kittenpic from './kitten-pic.jpeg';
 
 export default function Kittens () {
     return (
         <View style={styles.container}>
-            <Pics animal="Kittens" />
+            <Pics animal="Kittens" image={kittenpic}/>
         </View>
     )
 }
