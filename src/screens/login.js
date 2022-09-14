@@ -7,7 +7,6 @@ export default function LogIn () {
     return (
         <View style={styles.container}>
             <Text style={styles.headerText}>Welcome Back!</Text>
-            <Text>Test</Text>
 
         </View>
     )
