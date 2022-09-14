@@ -15,6 +15,9 @@ const Home = ({ navigation }) => {
             <Pressable style={styles.buttonStyle} onPress={() => navigation.navigate('Deer')}>
                 <Text style={styles.buttonTextStyle} >Deer</Text>
             </Pressable>
+            <Pressable style={styles.loginButtonStyle} onPress={() => navigation.navigate('Log In')}>
+                <Text style={styles.buttonTextStyle} >Log In</Text>
+            </Pressable>
         </View>
     )
 }
@@ -49,5 +52,16 @@ const styles = StyleSheet.create({
     ButtonTextStyle:{
         color: 'green',
         fontWeight: 'bold',
-    }
+    },
+    LoginButtonStyle:{
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginTop: 20,
+        backgroundColor: '#95D1A2',
+        height: 35,
+        width: 100,
+        paddingLeft: 15,
+        paddingRight: 15,
+        borderRadius: 10,
+    },
   });
