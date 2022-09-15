@@ -1,5 +1,5 @@
 import { View, StyleSheet, Text, KeyboardAvoidingView, TextInput, TouchableOpacity } from 'react-native'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { auth } from '../../firebase';
 
 
@@ -7,6 +7,16 @@ export default function LogIn () {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+
+    useEffect(() => {
+        auth.onAuthStateChanged(user => {
+            if(user){
+                NavigationPreloadManager.navigate("Dashboard")
+            }
+        })
+    }
+
+    )
 
     const handleSignUp = () => {
         auth
@@ -18,7 +28,14 @@ export default function LogIn () {
           .catch(error => alert(error.message))
       }
       
-
+    const handleLogin = () => {
+        auth.signInWithEmailAndPassword(email,password)
+        .then(userCredentials => {
+            const user = userCredentials.user;
+            console.log('Logged in with:', user.email);
+          })
+          .catch(error => alert(error.message))
+    }
       
     return (
         <KeyboardAvoidingView style={styles.container} behavior='padding'>
@@ -40,7 +57,7 @@ export default function LogIn () {
         </View>
             <View style={styles.buttonContainer}>
                 <TouchableOpacity
-                onPress={() => { }}
+                onPress={handleLogin}
                 style={styles.buttonStyle}
                 >
                     <Text style={styles.ButtonTextStyle}>Log In</Text>
