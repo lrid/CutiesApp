@@ -15,8 +15,8 @@ const Home = ({ navigation }) => {
             <Pressable style={styles.buttonStyle} onPress={() => navigation.navigate('Deer')}>
                 <Text style={styles.buttonTextStyle} >Deer</Text>
             </Pressable>
-            <Pressable style={styles.loginButtonStyle} onPress={() => navigation.navigate('Log In')}>
-                <Text style={styles.buttonTextStyle} >Log In</Text>
+            <Pressable style={[styles.buttonStyle, styles.buttonOutline]} onPress={() => navigation.navigate('Log In')}>
+                <Text style={styles.buttonOutlineText} >Log In</Text>
             </Pressable>
         </View>
     )
@@ -63,5 +63,15 @@ const styles = StyleSheet.create({
         paddingLeft: 15,
         paddingRight: 15,
         borderRadius: 10,
+    },
+    buttonOutline :{
+        backgroundColor: 'white',
+        marginTop: 70,
+        borderColor: '#95D1A2',
+        borderWidth: 2
+    },
+    buttonOutlineText : {
+        color: '#95D1A2',
+        fontWeight: 'bold',
     },
   });
